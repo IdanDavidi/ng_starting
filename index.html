@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html data-ng-app>
+<html data-ng-app="AngularApp">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Angular first time</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/ng.js"></script>
 </head>
 <body>
-Name:
-<br />
-<input type="text" data-ng-model="name" /> {{ name }}
 
-<br/><br/>
-<div class="container"
-     data-ng-init="people=[{name:'Idan'  , city:'Tel Aviv'},
-                               {name:'Or'    , city:'Haifa'},
-                               {name:'Nitzan', city:'Or Yehuda'},
-                               {name:'Grisha', city:'Holon'}]">
+<div class="container" data-ng-controller="peopleListController">
+    Name:
+    <br />
+    <input type="text" data-ng-model="name" /> {{ name }}
+
+    <br/><br/>
     <ul>
-        <li data-ng-repeat="person in people | filter:name | orderBy:'city'">{{ person.name }} - {{ person.city }}</li>
+        <li data-ng-repeat="person in people | filter:name | orderBy:'city'">
+            {{ person.name }} - {{ person.city }}
+        </li>
     </ul>
 </div>
-<script src="js/angular.js"></script>
+
 </body>
 </html>
