@@ -4,21 +4,13 @@
     <meta charset="UTF-8">
     <title>Angular first time</title>
     <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
     <script src="js/ng.js"></script>
 </head>
 <body>
 
-<div class="container" data-ng-controller="peopleListController">
-    Name:
-    <br />
-    <input type="text" data-ng-model="name" /> {{ name }}
-
-    <br/><br/>
-    <ul>
-        <li data-ng-repeat="person in people | filter:name | orderBy:'city'">
-            {{ person.name }} - {{ person.city }}
-        </li>
-    </ul>
+<div>
+    <div data-ng-view></div>
 </div>
 
 </body>

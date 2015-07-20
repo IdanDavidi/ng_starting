@@ -1,0 +1,11 @@
+<div class="container">
+    City: <br />
+    <input type="text" data-ng-model="filter.city" /> {{ city }}
+    <br/><br/>
+
+    <ul>
+        <li data-ng-repeat="person in peopleList | filter:filter.city | orderBy:'city'">
+            {{ person.name }} - {{ person.city }}
+        </li>
+    </ul>
+</div>
